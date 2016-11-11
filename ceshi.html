@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="waitao">
+		<ul class="neiyi">
+			<li class="page" id="p1">1</li>
+			<li class="page" id="p2">2</li>
+			<li class="page" id="p3">3</li>
+			<li class="page" id="p4">4</li>
+			<li class="page" id="p5">5</li>
+			<li class="page" id="p6">6</li>
+		</ul>
+	</div>
+	    <div id="op">
+        <a href="javascript:next()">next</a>&nbsp;<a href="javascript:prev()">previous</a>
+    </div>
+	<style>
+		#waitao{
+			-webkit-perspective:800;
+			-webkit-perspective-origin:50% 50%;
+
+			overflow: hidden;
+		}
+		.neiyi{
+			display:relative;
+			height: 400px;
+			width:400px;
+			margin:0 auto;
+			
+			-webkit-transform-style:preserve-3d;
+			/**/
+
+		}
+		.page{
+			position: absolute;
+			font-size: 360px;
+			height: 400px;
+			width:400px;
+			line-height: 400px;
+			background-color: black;
+			text-align:center;
+			color: white;
+			-webkit-transform-style:preserve-3d;
+		}
+		#p1{
+			-webkit-transform-origin:bottom;
+			-webkit-transition:-webkit-transform 1s linear;
+			
+		}
+		#p2,#p3,#p4,#p5,#p6{
+
+			-webkit-transform-origin:bottom;
+			-webkit-transition:-webkit-transform 1s linear;
+			-webkit-transform:rotateX(90deg);
+		}
+		 #op{
+            text-align:center;
+            margin: 40px auto;
+        }
+	</style>
+
+	    <script type="text/javascript">
+	var index=1;
+	function next(){
+	    if(index==6){
+	   		return;
+	    }
+	    var curindex=document.getElementById("p"+index);
+		curindex.style.webkitTransform="rotateX(90deg)";
+		index++;
+		var nextindex=document.getElementById("p"+index);
+		nextindex.style.webkitTransform="rotateX(0deg)";
+		}
+		function prev(){
+			   if(index==1){
+			return;
+			}
+			   var curindex=document.getElementById("p"+index);
+			curindex.style.webkitTransform="rotateX(90deg)";
+			index--;
+			var preindex=document.getElementById("p"+index);
+			preindex.style.webkitTransform="rotateX(0deg)";
+		}
+</script>
+</body>
+</html>

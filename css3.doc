@@ -1,0 +1,31 @@
+transition:<过渡属性名称><过渡时间><过渡模式>
+
+模式 ease  缓慢开始缓慢结束
+linear  匀速
+ease-in  缓慢开始
+ease-out  缓慢结束
+eas-in-out   缓慢开始缓慢结束
+支持chrome  要用到
+-webkit-transition
+可以改成下列形式
+transition-property:color;
+transition-duration:1s;
+
+
+3d显示方式 使用方式
+1.
+设定距离和视角
+-webkit-perspective:800;
+
+-webkit-perspective-origin:50% 50%;
+
+2.以3d模式显示
+-webkit-transform-style:preserve-3d;
+
+3.
+设定动作参考线条 
+设定transition简单动作
+-webkit-transform-origin:bottom;
+-webkit-transition: -webkit-transform 1s linear;
+
+4.transform更改 启动动作
